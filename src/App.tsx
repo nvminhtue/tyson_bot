@@ -7,20 +7,6 @@ type ChatGPTResponse = {
     text: string;
 };
 
-function Echo() {
-    const [text, setText] = useState('Say something');
-
-    useText(({ text }) => {
-        setText(text);
-    });
-
-    return (
-        <Text>
-            <i>{text}</i>
-        </Text>
-    );
-}
-
 function ChatGPT() {
     const [text, setText] = useState('ChatGPT enabled');
     const [response, setResponse] = useState<ChatGPTResponse>();
@@ -39,13 +25,10 @@ function ChatGPT() {
 export function App() {
     return (
         <>
-            <Text>Welcome to Mirs Bot! Type /chatgpt or /echo.</Text>
+            <Text>Welcome to Tyson Bot! Type /chatgpt</Text>
             <Router>
                 <Route path="/chatgpt">
                     <ChatGPT />
-                </Route>
-                <Route path="/echo">
-                    <Echo />
                 </Route>
             </Router>
         </>
